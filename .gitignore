@@ -9,3 +9,4 @@ wheels/
 # venv
 .venv
 /.coverage
+/notebooks/.ipynb_checkpoints/*.ipynb

@@ -8,9 +8,15 @@
 #   with-sources: false
 
 -e file:.
+aiosqlite==0.20.0
+    # via pycrdt-websocket
 anyio==4.3.0
     # via httpx
+    # via httpx-ws
     # via jupyter-server
+    # via pycrdt-websocket
+    # via txl-local-contents
+    # via txl-local-terminals
 appnope==0.1.4
     # via ipykernel
 argon2-cffi==23.1.0
@@ -19,14 +25,23 @@ argon2-cffi-bindings==21.2.0
     # via argon2-cffi
 arrow==1.3.0
     # via isoduration
+asphalt==4.12.0
+    # via txl
 astropy==6.0.0
     # via ridge-trace
 astropy-iers-data==0.2024.2.19.0.28.47
     # via astropy
 asttokens==2.4.1
     # via stack-data
+async-generator==1.10
+    # via asphalt
+    # via asyncio-extras
 async-lru==2.0.4
     # via jupyterlab
+async-timeout==4.0.3
+    # via asphalt
+asyncio-extras==1.3.2
+    # via asphalt
 attrs==23.2.0
     # via jsonschema
     # via referencing
@@ -44,9 +59,13 @@ cffi==1.16.0
     # via argon2-cffi-bindings
 charset-normalizer==3.3.2
     # via requests
+click==8.1.7
+    # via asphalt
+    # via rich-click
 comm==0.2.1
     # via ipykernel
     # via ipywidgets
+    # via ypywidgets
 contourpy==1.2.0
     # via matplotlib
 coverage==7.4.2
@@ -69,10 +88,20 @@ fqdn==1.5.1
     # via jsonschema
 h11==0.14.0
     # via httpcore
-httpcore==1.0.3
+    # via wsproto
+httpcore==1.0.4
     # via httpx
+    # via httpx-ws
 httpx==0.26.0
+    # via httpx-ws
     # via jupyterlab
+    # via txl-remote-contents
+    # via txl-remote-kernels
+    # via txl-remote-terminals
+httpx-ws==0.5.1
+    # via txl-remote-contents
+    # via txl-remote-kernels
+    # via txl-remote-terminals
 idna==3.6
     # via anyio
     # via httpx
@@ -85,6 +114,7 @@ ipykernel==6.29.2
     # via jupyter-console
     # via jupyterlab
     # via qtconsole
+    # via txl-local-kernels
 ipython==8.21.0
     # via ipykernel
     # via ipywidgets
@@ -100,6 +130,7 @@ jinja2==3.1.3
     # via jupyterlab
     # via jupyterlab-server
     # via nbconvert
+jpterm==0.2.8
 json5==0.9.17
     # via jupyterlab-server
 jsonpointer==2.4
@@ -141,6 +172,11 @@ jupyter-server==2.12.5
     # via notebook-shim
 jupyter-server-terminals==0.5.2
     # via jupyter-server
+jupyter-ydoc==2.0.1
+    # via txl-console
+    # via txl-local-contents
+    # via txl-notebook-editor
+    # via txl-remote-contents
 jupyterlab==4.1.2
     # via notebook
 jupyterlab-pygments==0.3.0
@@ -152,6 +188,12 @@ jupyterlab-widgets==3.0.10
     # via ipywidgets
 kiwisolver==1.4.5
     # via matplotlib
+linkify-it-py==2.0.3
+    # via markdown-it-py
+markdown-it-py==3.0.0
+    # via mdit-py-plugins
+    # via rich
+    # via textual
 markupsafe==2.1.5
     # via jinja2
     # via nbconvert
@@ -161,6 +203,10 @@ matplotlib==3.8.3
 matplotlib-inline==0.1.6
     # via ipykernel
     # via ipython
+mdit-py-plugins==0.4.0
+    # via markdown-it-py
+mdurl==0.1.2
+    # via markdown-it-py
 mistune==3.0.2
     # via nbconvert
 nbclient==0.9.0
@@ -210,8 +256,11 @@ pexpect==4.9.0
     # via ipython
 pillow==10.2.0
     # via matplotlib
+    # via textual-imageview
 platformdirs==4.2.0
     # via jupyter-core
+plotext==5.2.8
+    # via textual-plotext
 pluggy==1.4.0
     # via pytest
 prometheus-client==0.20.0
@@ -228,6 +277,18 @@ pure-eval==0.2.2
     # via stack-data
 pycparser==2.21
     # via cffi
+pycrdt==0.8.11
+    # via jupyter-ydoc
+    # via pycrdt-websocket
+    # via txl-cell
+    # via txl-kernel
+    # via txl-notebook-editor
+    # via txl-remote-contents
+    # via txl-remote-kernels
+    # via txl-widgets
+    # via ypywidgets
+pycrdt-websocket==0.12.7
+    # via txl-remote-contents
 pyerfa==2.0.1.1
     # via astropy
 pygments==2.17.2
@@ -235,8 +296,12 @@ pygments==2.17.2
     # via jupyter-console
     # via nbconvert
     # via qtconsole
+    # via rich
 pyparsing==3.1.1
     # via matplotlib
+pyte==0.8.2
+    # via txl-terminal
+    # via ypywidgets-textual
 pytest==8.0.1
     # via pytest-cov
 pytest-cov==4.1.0
@@ -245,6 +310,7 @@ python-dateutil==2.8.2
     # via jupyter-client
     # via matplotlib
     # via pandas
+    # via txl-kernel
 python-json-logger==2.0.7
     # via jupyter-events
 pytz==2024.1
@@ -258,10 +324,13 @@ pyzmq==25.1.2
     # via jupyter-console
     # via jupyter-server
     # via qtconsole
+    # via txl-local-kernels
 qtconsole==5.5.1
     # via jupyter
 qtpy==2.4.1
     # via qtconsole
+reacttrs==0.1.4
+    # via ypywidgets
 referencing==0.33.0
     # via jsonschema
     # via jsonschema-specifications
@@ -274,13 +343,25 @@ rfc3339-validator==0.1.4
 rfc3986-validator==0.1.1
     # via jsonschema
     # via jupyter-events
+rich==13.7.0
+    # via rich-click
+    # via textual
+    # via textual-imageview
+rich-click==1.7.3
+    # via jpterm
 rpds-py==0.18.0
     # via jsonschema
     # via referencing
+ruamel-yaml==0.18.6
+    # via asphalt
+ruamel-yaml-clib==0.2.8
+    # via ruamel-yaml
 seaborn==0.13.2
     # via ridge-trace
 send2trash==1.8.2
     # via jupyter-server
+setuptools==69.1.0
+    # via tree-sitter
 six==1.16.0
     # via asttokens
     # via bleach
@@ -296,6 +377,15 @@ stack-data==0.6.3
 terminado==0.18.0
     # via jupyter-server
     # via jupyter-server-terminals
+textual==0.52.1
+    # via textual-imageview
+    # via textual-plotext
+    # via txl
+    # via ypywidgets-textual
+textual-imageview==0.1.1
+    # via txl-image-viewer
+textual-plotext==0.2.1
+    # via ypywidgets-textual
 tinycss2==1.2.1
     # via nbconvert
 tornado==6.4
@@ -321,16 +411,89 @@ traitlets==5.14.1
     # via nbconvert
     # via nbformat
     # via qtconsole
+tree-sitter==0.20.4
+    # via textual
+    # via tree-sitter-languages
+tree-sitter-languages==1.10.2
+    # via textual
+txl==0.2.8
+    # via jpterm
+    # via txl-cell
+    # via txl-console
+    # via txl-editors
+    # via txl-file-browser
+    # via txl-image-viewer
+    # via txl-jpterm
+    # via txl-kernel
+    # via txl-launcher
+    # via txl-local-contents
+    # via txl-local-kernels
+    # via txl-local-terminals
+    # via txl-markdown-viewer
+    # via txl-notebook-editor
+    # via txl-remote-contents
+    # via txl-remote-kernels
+    # via txl-remote-terminals
+    # via txl-terminal
+    # via txl-text-editor
+    # via txl-widgets
+txl-cell==0.2.8
+    # via jpterm
+txl-console==0.2.8
+    # via jpterm
+txl-editors==0.2.8
+    # via jpterm
+txl-file-browser==0.2.8
+    # via jpterm
+txl-image-viewer==0.2.8
+    # via jpterm
+txl-jpterm==0.2.8
+    # via jpterm
+txl-kernel==0.2.8
+    # via jpterm
+    # via txl-local-kernels
+    # via txl-remote-kernels
+txl-launcher==0.2.8
+    # via jpterm
+txl-local-contents==0.2.8
+    # via jpterm
+txl-local-kernels==0.2.8
+    # via jpterm
+txl-local-terminals==0.2.8
+    # via jpterm
+txl-markdown-viewer==0.2.8
+    # via jpterm
+txl-notebook-editor==0.2.8
+    # via jpterm
+txl-remote-contents==0.2.8
+    # via jpterm
+txl-remote-kernels==0.2.8
+    # via jpterm
+txl-remote-terminals==0.2.8
+    # via jpterm
+txl-terminal==0.2.8
+    # via jpterm
+txl-text-editor==0.2.8
+    # via jpterm
+txl-widgets==0.2.8
+    # via jpterm
 types-python-dateutil==2.8.19.20240106
     # via arrow
+typing-extensions==4.9.0
+    # via aiosqlite
+    # via rich-click
+    # via textual
 tzdata==2024.1
     # via pandas
+uc-micro-py==1.0.3
+    # via linkify-it-py
 uri-template==1.3.0
     # via jsonschema
 urllib3==2.2.1
     # via requests
 wcwidth==0.2.13
     # via prompt-toolkit
+    # via pyte
 webcolors==1.13
     # via jsonschema
 webencodings==0.5.1
@@ -340,3 +503,10 @@ websocket-client==1.7.0
     # via jupyter-server
 widgetsnbextension==4.0.10
     # via ipywidgets
+wsproto==1.2.0
+    # via httpx-ws
+ypywidgets==0.6.5
+    # via txl-widgets
+    # via ypywidgets-textual
+ypywidgets-textual==0.2.4
+    # via txl-widgets

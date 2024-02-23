@@ -27,6 +27,7 @@ dev-dependencies = [
     "jupyter>=1.0.0",
     "pytest>=8.0.1",
     "pytest-cov>=4.1.0",
+    "jpterm>=0.2.8",
 ]
 
 [tool.hatch.metadata]

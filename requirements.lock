@@ -10,7 +10,7 @@
 -e file:.
 astropy==6.0.0
     # via ridge-trace
-astropy-iers-data==0.2024.2.19.0.28.47
+astropy-iers-data==0.2024.2.26.0.28.55
     # via astropy
 contourpy==1.2.0
     # via matplotlib
@@ -34,7 +34,7 @@ numpy==1.26.4
 packaging==23.2
     # via astropy
     # via matplotlib
-pandas==2.2.0
+pandas==2.2.1
     # via seaborn
 pillow==10.2.0
     # via matplotlib
@@ -42,7 +42,7 @@ pyerfa==2.0.1.1
     # via astropy
 pyparsing==3.1.1
     # via matplotlib
-python-dateutil==2.8.2
+python-dateutil==2.9.0
     # via matplotlib
     # via pandas
 pytz==2024.1

@@ -29,7 +29,7 @@ asphalt==4.12.0
     # via txl
 astropy==6.0.0
     # via ridge-trace
-astropy-iers-data==0.2024.2.19.0.28.47
+astropy-iers-data==0.2024.2.26.0.28.55
     # via astropy
 asttokens==2.4.1
     # via stack-data
@@ -68,7 +68,7 @@ comm==0.2.1
     # via ypywidgets
 contourpy==1.2.0
     # via matplotlib
-coverage==7.4.2
+coverage==7.4.3
     # via pytest-cov
 cycler==0.12.1
     # via matplotlib
@@ -92,7 +92,7 @@ h11==0.14.0
 httpcore==1.0.4
     # via httpx
     # via httpx-ws
-httpx==0.26.0
+httpx==0.27.0
     # via httpx-ws
     # via jupyterlab
     # via txl-remote-contents
@@ -109,13 +109,13 @@ idna==3.6
     # via requests
 iniconfig==2.0.0
     # via pytest
-ipykernel==6.29.2
+ipykernel==6.29.3
     # via jupyter
     # via jupyter-console
     # via jupyterlab
     # via qtconsole
     # via txl-local-kernels
-ipython==8.21.0
+ipython==8.22.1
     # via ipykernel
     # via ipywidgets
     # via jupyter-console
@@ -162,7 +162,7 @@ jupyter-core==5.7.1
     # via qtconsole
 jupyter-events==0.9.0
     # via jupyter-server
-jupyter-lsp==2.2.2
+jupyter-lsp==2.2.3
     # via jupyterlab
 jupyter-server==2.12.5
     # via jupyter-lsp
@@ -220,7 +220,7 @@ nbformat==5.9.2
     # via nbconvert
 nest-asyncio==1.6.0
     # via ipykernel
-notebook==7.1.0
+notebook==7.1.1
     # via jupyter
 notebook-shim==0.2.4
     # via jupyterlab
@@ -246,7 +246,7 @@ packaging==23.2
     # via pytest
     # via qtconsole
     # via qtpy
-pandas==2.2.0
+pandas==2.2.1
     # via seaborn
 pandocfilters==1.5.1
     # via nbconvert
@@ -302,10 +302,10 @@ pyparsing==3.1.1
 pyte==0.8.2
     # via txl-terminal
     # via ypywidgets-textual
-pytest==8.0.1
+pytest==8.0.2
     # via pytest-cov
 pytest-cov==4.1.0
-python-dateutil==2.8.2
+python-dateutil==2.9.0
     # via arrow
     # via jupyter-client
     # via matplotlib
@@ -343,7 +343,7 @@ rfc3339-validator==0.1.4
 rfc3986-validator==0.1.1
     # via jsonschema
     # via jupyter-events
-rich==13.7.0
+rich==13.7.1
     # via rich-click
     # via textual
     # via textual-imageview
@@ -360,14 +360,14 @@ seaborn==0.13.2
     # via ridge-trace
 send2trash==1.8.2
     # via jupyter-server
-setuptools==69.1.0
+setuptools==69.1.1
     # via tree-sitter
 six==1.16.0
     # via asttokens
     # via bleach
     # via python-dateutil
     # via rfc3339-validator
-sniffio==1.3.0
+sniffio==1.3.1
     # via anyio
     # via httpx
 soupsieve==2.5
@@ -479,7 +479,7 @@ txl-widgets==0.2.8
     # via jpterm
 types-python-dateutil==2.8.19.20240106
     # via arrow
-typing-extensions==4.9.0
+typing-extensions==4.10.0
     # via aiosqlite
     # via rich-click
     # via textual

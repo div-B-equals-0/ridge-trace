@@ -10,3 +10,4 @@ wheels/
 .venv
 /.coverage
 /notebooks/.ipynb_checkpoints/*.ipynb
+notebooks/.ipynb_checkpoints

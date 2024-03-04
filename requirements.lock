@@ -30,6 +30,7 @@ numpy==1.26.4
     # via pandas
     # via pyerfa
     # via ridge-trace
+    # via scipy
     # via seaborn
 packaging==23.2
     # via astropy
@@ -49,6 +50,8 @@ pytz==2024.1
     # via pandas
 pyyaml==6.0.1
     # via astropy
+scipy==1.12.0
+    # via ridge-trace
 seaborn==0.13.2
     # via ridge-trace
 six==1.16.0

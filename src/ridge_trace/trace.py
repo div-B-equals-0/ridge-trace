@@ -10,10 +10,10 @@ class Point:
     x: float
     y: float
 
-    def take_step(self, theta: float, step: float):
+    def take_step(self, theta: float, distance: float):
         return Point(
-            self.x + step * np.cos(np.rad2deg(theta)),
-            self.y + step * np.sin(np.rad2deg(theta)),
+            self.x + distance * np.cos(np.deg2rad(theta)),
+            self.y + distance * np.sin(np.deg2rad(theta)),
         )
 
 
@@ -36,10 +36,10 @@ class StraightLine:
         self.theta = theta
         self.step = step
         self.nsteps = nsteps
-        points = [Point(x0, y0)]
+        point_list = [Point(x0, y0)]
         for i in range(nsteps):
-            self.points.append(self.points[-1].take_step(theta, step))
-        self.points = PointArray(points)
+            point_list.append(point_list[-1].take_step(theta, step))
+        self.points = PointArray(point_list)
 
     def __len__(self):
         return len(self.points)
@@ -64,4 +64,4 @@ def interpolate_at_points(image, points: PointArray):
     Returns:
         1D numpy array of shape (n,) where n is the number of points.
     """
-    return map_coordinates(image, [points.x, points.y], order=1)
+    return map_coordinates(image, [points.x, points.y], order=1, cval=np.nan)

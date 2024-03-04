@@ -232,6 +232,7 @@ numpy==1.26.4
     # via pandas
     # via pyerfa
     # via ridge-trace
+    # via scipy
     # via seaborn
 overrides==7.7.0
     # via jupyter-server
@@ -356,6 +357,8 @@ ruamel-yaml==0.18.6
     # via asphalt
 ruamel-yaml-clib==0.2.8
     # via ruamel-yaml
+scipy==1.12.0
+    # via ridge-trace
 seaborn==0.13.2
     # via ridge-trace
 send2trash==1.8.2

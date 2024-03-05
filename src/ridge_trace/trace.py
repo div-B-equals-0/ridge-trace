@@ -50,6 +50,14 @@ class StraightLine:
     def __iter__(self):
         return iter(self.points)
 
+    def __repr__(self):
+        return f"StraightLine(x0={self.x0}, y0={self.y0}, theta={self.theta})"
+
+    def __str__(self):
+        return (
+            f"Straight line from ({self.x0}, {self.y0}) at angle {self.theta} degrees"
+        )
+
     def image_values(self, image):
         return interpolate_at_points(image, self.points)
 
@@ -64,4 +72,11 @@ def interpolate_at_points(image, points: PointArray):
     Returns:
         1D numpy array of shape (n,) where n is the number of points.
     """
-    return map_coordinates(image, [points.x, points.y], order=1, cval=np.nan)
+    # Note that order of coordinates is row, column in
+    # map_coordinates, which is y, x in our case
+    return map_coordinates(image, [points.y, points.x], order=1, cval=np.nan)
+
+
+def peak_indices(image):
+    """Find indices of the peak pixel in 2d image"""
+    return np.unravel_index(np.nanargmax(image), image.shape)

@@ -131,7 +131,7 @@ class ImageCurvature:
         # Re-instate NaNs if required
         if preserve_nan:
             self.image[nan_mask] = np.nan
-        # Remove the margin from the image
+        # Remove the margin that we added to the image
         self.image = self.image[self.trim]
 
     def _find_curvatures(self):
@@ -163,6 +163,13 @@ class ImageCurvature:
             self.kmean**2 - self.kgauss
         )
 
-        # Calculate the principal directions (in degrees cc from x-axis)
-        self.theta1 = np.rad2deg(np.arctan2(self.kappa1 - self.grad_xx, self.grad_xy))
-        self.theta2 = np.rad2deg(np.arctan2(self.kappa2 - self.grad_xx, self.grad_xy))
+        # Calculate the principal directions (cc from x-axis)
+        self.th1 = np.arctan2(self.kappa1 - self.grad_xx, self.grad_xy)
+        self.th2 = np.arctan2(self.kappa2 - self.grad_xx, self.grad_xy)
+        # and a more human-friendly version in degrees
+        self.theta1 = np.rad2deg(self.th1)
+        self.theta2 = np.rad2deg(self.th2)
+
+        # Calculate gradients in the principal directions
+        self.grad1 = self.grad_x * np.cos(self.th1) + self.grad_y * np.sin(self.th1)
+        self.grad2 = self.grad_x * np.cos(self.th2) + self.grad_y * np.sin(self.th2)

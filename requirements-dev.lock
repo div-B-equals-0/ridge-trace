@@ -68,6 +68,7 @@ comm==0.2.1
     # via ypywidgets
 contourpy==1.2.0
     # via matplotlib
+    # via ridge-trace
 coverage==7.4.3
     # via pytest-cov
 cycler==0.12.1
@@ -234,6 +235,7 @@ numpy==1.26.4
     # via ridge-trace
     # via scipy
     # via seaborn
+    # via shapely
 overrides==7.7.0
     # via jupyter-server
 packaging==23.2
@@ -365,6 +367,8 @@ send2trash==1.8.2
     # via jupyter-server
 setuptools==69.1.1
     # via tree-sitter
+shapely==2.0.3
+    # via ridge-trace
 six==1.16.0
     # via asttokens
     # via bleach

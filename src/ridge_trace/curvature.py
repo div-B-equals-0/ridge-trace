@@ -156,16 +156,21 @@ class ImageCurvature:
         self.kgauss = self.grad_xx * self.grad_yy - self.grad_xy * self.grad_yx
         self.kmean = (self.grad_xx + self.grad_yy) / 2
         # Calculate the principal curvatures
-        self.kappa1 = self.kmean + np.sign(self.kmean) * np.sqrt(
-            self.kmean**2 - self.kgauss
-        )
-        self.kappa2 = self.kmean - np.sign(self.kmean) * np.sqrt(
-            self.kmean**2 - self.kgauss
-        )
+        # self.kappa1 = self.kmean + np.sign(self.kmean) * np.sqrt(
+        #     self.kmean**2 - self.kgauss
+        # )
+        # self.kappa2 = self.kmean - np.sign(self.kmean) * np.sqrt(
+        #     self.kmean**2 - self.kgauss
+        # )
+        self.kappa1 = self.kmean - np.sqrt(self.kmean**2 - self.kgauss)
+        self.kappa2 = self.kmean + np.sqrt(self.kmean**2 - self.kgauss)
 
         # Calculate the principal directions (cc from x-axis)
         self.th1 = np.arctan2(self.kappa1 - self.grad_xx, self.grad_xy)
         self.th2 = np.arctan2(self.kappa2 - self.grad_xx, self.grad_xy)
+        # Put onto the range 0 to pi
+        self.th1 = np.mod(self.th1, np.pi)
+        self.th2 = np.mod(self.th2, np.pi)
         # and a more human-friendly version in degrees
         self.theta1 = np.rad2deg(self.th1)
         self.theta2 = np.rad2deg(self.th2)
